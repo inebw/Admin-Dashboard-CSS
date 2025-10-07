@@ -1,0 +1,154 @@
+body {
+    font-family: Roboto;
+    background-color: #e4e8ef;
+    display: grid;
+    height: 100vh;
+    grid-template-columns: max-content 2fr 1fr;
+    grid-template-rows: 1fr 2fr 2fr;
+    gap: 10px;
+    grid-template-areas: 
+    "sidebar header header"
+    "sidebar all-projects announcements-wrapper"
+    "sidebar all-projects trending";
+}
+
+body > div {
+    border: solid black 1px;
+    padding: 10px;
+}
+.sidebar {
+    grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    background-color: #518fd0;
+    color: white;
+}
+
+.sidebar > div {
+    padding-left: 25px;
+    padding-right: 50px;
+}
+
+.header {
+    grid-area: header;
+    background-color: #ffffff;
+
+}
+
+.all-projects {
+    grid-area: all-projects;
+}
+
+.announcements-wrapper {
+    grid-area: announcements-wrapper;
+}
+
+.trending {
+    grid-area: trending;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    list-style: none;
+
+}
+
+.proj,
+.trends,
+.announcement {
+    background-color: #ffffff;
+}
+
+h1, h2, h3, ul, body {
+    padding: 0;
+    margin: 0;
+}
+
+input {
+    background-color: #e4e8ef;
+    border: none;
+    border-radius: 8px;
+    padding-left: 8px;
+}
+
+.heading::before {
+    content: url("icons/view-dashboard.svg");
+    height: 3rem;
+    width: 3rem;
+    display: inline-block;
+    margin-right: 5px;
+    
+}
+
+.heading {
+    padding-left: 10px !important;
+    display: flex;
+    align-items: center;
+}
+
+
+#home::before {
+    content: url("icons/home.svg");
+    height: 1.5rem;
+    width: 1.5rem;
+    display: inline-block;
+}
+
+#profile::before {
+    content: url("icons/profile.svg");
+    height: 1.1rem;
+    width: 1.1rem;
+    display: inline-block;
+}
+#messages::before {
+    content: url("icons/messages.svg");
+    height: 1.2rem;
+    width: 1.2rem;
+    display: inline-block;
+}
+#history::before {
+    content: url("icons/history.svg");
+    height: 1.2rem;
+    width: 1.2rem;
+    display: inline-block;
+}
+#tasks::before {
+    content: url("icons/tasks.svg");
+    height: 1.2rem;
+    width: 1.2rem;
+    display: inline-block;
+}
+#communities::before {
+    content: url("icons/communities.svg");
+    height: 1.3rem;
+    width: 1.3rem;
+    display: inline-block;
+}
+
+#settings::before {
+    content: url("icons/settings.svg");
+    height: 1.2rem;
+    width: 1.2rem;
+    display: inline-block;
+}
+#support::before {
+    content: url("icons/support.svg");
+    height: 1.2rem;
+    width: 1.2rem;
+    display: inline-block;
+}
+#privacy::before {
+    content: url("icons/privacy.svg");
+    height: 1.2rem;
+    width: 1.2rem;
+    display: inline-block;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
