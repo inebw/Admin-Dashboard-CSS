@@ -3,9 +3,9 @@ body {
     background-color: #e4e8ef;
     display: grid;
     height: 100vh;
-    grid-template-columns: max-content 2fr 1fr;
-    grid-template-rows: 1fr 2fr 2fr;
-    gap: 10px;
+    grid-template-columns: max-content 3fr 1fr;
+    grid-template-rows: max-content 2fr 2fr;
+    row-gap: 10px;
     grid-template-areas: 
     "sidebar header header"
     "sidebar all-projects announcements-wrapper"
@@ -13,9 +13,9 @@ body {
 }
 
 body > div {
-    border: solid black 1px;
     padding: 10px;
 }
+
 .sidebar {
     grid-area: sidebar;
     display: flex;
@@ -33,10 +33,96 @@ body > div {
 .header {
     grid-area: header;
     background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 10px 50px 25px 50px; 
+}
 
+.top-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.actions,
+.profile,
+.bottom-header,
+.notif-bar {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.actions > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border-radius: 24px;
+    width: 100px;
+    height: 2.5rem;
+    color: white;
+    background-color: #518fd0;
+}
+
+.userdp > img,
+.image {
+    border-radius: 50%;
+    height: 3em;
+}
+
+
+.image1 {
+    border-radius: 50%;
+    height: 5em;
+}
+
+.user {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    grid-template-rows: min-content min-content;
+    column-gap: 15px;
+    grid-template-areas:
+    "userdp user-id"
+    "userdp app-name";
+}
+
+.trends {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 25px;
+    border-radius: 8px;
+}
+
+.user-id {
+    font-size: 0.8rem;
+    grid-area: user-id;
+}
+
+.userdp {
+    grid-area: userdp;
+}
+
+.app-name {
+    color: grey;
+    font-size: 0.9rem;
+    grid-area: app-name;
+}
+
+
+.bottom-header {
+    justify-content: space-between;
+
+}
+.notifications {
+    height: 1.5rem;
+    width: 1.5rem;
 }
 
 .all-projects {
+    padding-left: 35px;
+    padding-right: 35px;
     grid-area: all-projects;
 }
 
@@ -44,8 +130,35 @@ body > div {
     grid-area: announcements-wrapper;
 }
 
+.announcements > div {
+    padding: 25px 5px 25px 5px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(128, 128, 128, 0.5);
+}
+
+.announcement > p {
+    font-size: 0.8rem;
+    color: grey;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
+.announcement > h3 {
+    font-size: 15px;
+}
+
+.announcements {
+    padding: 5px 25px 50px 25px;
+    margin-right: 50px;
+    border-radius: 8px;
+}
+
 .trending {
     grid-area: trending;
+    padding-right: 50px;
 }
 
 ul {
@@ -53,25 +166,36 @@ ul {
     flex-direction: column;
     gap: 20px;
     list-style: none;
-
+    font-weight: 500;
+    font-size: 1.2rem;
 }
 
 .proj,
 .trends,
-.announcement {
+.announcements {
     background-color: #ffffff;
 }
 
-h1, h2, h3, ul, body {
+h1, h2, h3, ul, body, p {
     padding: 0;
     margin: 0;
+}
+
+h2 {
+    padding: 0px 0px 12px 10px;
+}
+
+.hi-there {
+    padding-left: 10px;
 }
 
 input {
     background-color: #e4e8ef;
     border: none;
-    border-radius: 8px;
-    padding-left: 8px;
+    width: 35rem;
+    height: 2rem;
+    border-radius: 16px;
+    padding-left: 16px;
 }
 
 .heading::before {
@@ -147,8 +271,65 @@ input {
     display: inline-block;
 }
 
-li {
+.search::before {
+    content: url("icons/search.svg");
+    height: 1.7rem;
+    width: 1.7rem;
+    display: inline-block;
+    justify-self: center;
+}
+
+li,
+.searchbar {
     display: flex;
     align-items: center;
     gap: 10px;
 }
+
+.proj-actions {
+    display: flex;
+    gap: 20px;
+    align-self: flex-end;
+    justify-self: flex-end;
+    opacity: 0.9;
+}
+
+.star,
+.view,
+.share-proj {
+    height: 1.5em;
+    width: 1.5em;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: 300px;
+    gap: 20px;
+}
+
+.proj {
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    border-left-color: #e3b741;
+    border-left-width: 10px;
+    border-left-style: solid;
+}
+
+.proj p {
+    color: grey;
+}
+
+.trends,
+.announcements,
+.proj,
+.header {
+    box-shadow: 0px 0px 8px 8px #00000010;
+
+}
+
+
+
+
